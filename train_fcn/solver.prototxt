@@ -12,7 +12,7 @@ display: 10
 max_iter: 600000
 momentum: 0.9
 weight_decay: 0.0005
-snapshot: 100
+snapshot: 10000
 snapshot_prefix: "examples/MultiFCN/lambda3/MultiFCN"
 solver_mode: GPU 
 solver_type:SGD
