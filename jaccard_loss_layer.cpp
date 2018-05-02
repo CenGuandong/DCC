@@ -11,12 +11,11 @@
 using namespace std;
 
 namespace caffe {
-
   template <typename Dtype>
   void JaccardLossLayer<Dtype>::LayerSetUp(const vector<Blob<Dtype>*>& bottom,const vector<Blob<Dtype>*>& top)
   {
-    Layer<Dtype>::LayerSetUp(bottom,top);
-    this->layer_param_.add_loss_weight(Dtype(1));
+    	Layer<Dtype>::LayerSetUp(bottom,top);
+    	this->layer_param_.add_loss_weight(Dtype(1));
   }
 
   template <typename Dtype>
@@ -42,34 +41,35 @@ namespace caffe {
   	Dtype sum_bg_2 = 0;
   	Dtype jaccardloss = 0;
   	int dim = bottom[0]->count() / bottom[0]->num();
-	for (int i = 0; i < num; ++i) {
+	for (int i = 0; i < num; ++i) 
+	{
 		count_fg = 0;
 		count_bg = 0;
 		count_bg_2 = 0;
 		sum_fg = 0;
   		sum_bg = 0;
   		sum_bg_2 = 0;
-		for (int j = 0; j < dim; j ++) {
+		for (int j = 0; j < dim; j ++) 
+		{
 			Dtype labelValue = target[i*dim+j]*0.00392157;
 			if (labelValue > 0.9) {
-	        	count_fg ++;
-	        	sum_fg += input_data[i*dim + j];
+	        		count_fg ++;
+	        		sum_fg += input_data[i*dim + j];
+	    		}
+	    		else if(labelValue < 0.05)
+	    		{	
+	    			count_bg ++;	
+	    			sum_bg += input_data[i*dim + j];
+	    		}
+			else
+			{
+				count_bg_2 ++;
+				sum_bg_2 += input_data[i*dim + j];
+			}
 	    	}
-	    	else if(labelValue < 0.05)
-	    	{
-	    		count_bg ++;	
-	    		sum_bg += input_data[i*dim + j];
-	    	}
-	    	else
-	    	{
-	    		count_bg_2 ++;
-	    		sum_bg_2 += input_data[i*dim + j];
-	    	}
-	    	
-	    }
-	    jaccardloss += 1 - sum_fg / (count_fg + sum_bg + Lambda_ * sum_bg_2);
+	    	jaccardloss += 1 - sum_fg / (count_fg + sum_bg + Lambda_ * sum_bg_2);
 	 }
-	top[0]->mutable_cpu_data()[0] = jaccardloss / num;
+	 top[0]->mutable_cpu_data()[0] = jaccardloss / num;
   }
 
 
@@ -97,7 +97,8 @@ namespace caffe {
   	    Dtype sum_bg = 0;
   	    Dtype sum_bg_2 = 0;
 	    int dim = bottom[0]->count() / bottom[0]->num();
-	    for (int i = 0; i < num; ++i) {
+	    for (int i = 0; i < num; ++i) 
+	    {
 	    	count_fg = 0;
 	    	count_bg = 0;
 	    	count_bg_2 = 0;
@@ -122,7 +123,8 @@ namespace caffe {
 			    	sum_bg_2 += input_data[i*dim + j];
 		    	}
 	     	}
-	    	for (int j = 0; j < dim; j ++) {
+	    	for (int j = 0; j < dim; j ++) 
+		{
 	        	if (target[i*dim+j] > 0.9) {
 	                	bottom_diff[i * dim + j] = -1 / (count_fg + sum_bg + Lambda_ * sum_bg_2);
 	        	}
