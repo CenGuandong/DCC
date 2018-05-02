@@ -7,7 +7,7 @@ Installation
 
 1.For caffe version of this project, please install HED(https://github.com/s9xie/hed) at first. 
 
-2.Replace file 'vision_layers.hpp' and file 'loss_layers.hpp'.
+2.Replace file 'vision_layers.hpp' and file 'loss_layers.hpp' in '$CAFFE_ROOT/include/caffe/'
 
 3.Add these layers: BatchNorm Layer(not provided in this branch), jaccard_loss_layer.cpp and post_layer.cpp.
 
