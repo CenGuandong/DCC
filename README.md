@@ -7,7 +7,7 @@ Installation
 
 1. For caffe version of this project, please install HED(https://github.com/s9xie/hed) at first. 
 
-2. Add the following code in 'caffe.proto':
+2. Add the following code in 'caffe.proto'.
   optional PostParameter post_param = 139;
   optional JaccardLossParameter jaccard_loss_param = 141;
   
