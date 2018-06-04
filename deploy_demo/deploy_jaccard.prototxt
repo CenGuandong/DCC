@@ -49,6 +49,7 @@ layer { bottom: 'pool1-data2' top: 'conv2-data2' name: 'conv2-data2' type: "Conv
 layer { bottom: 'conv2-data2' top: 'conv2-data2' name: 'relu2-data2' type: "ReLU" }
 layer { name: 'pool2-data2' bottom: 'conv2-data2' top: 'pool2-data2' type: "Pooling"  pooling_param { pool: MAX kernel_size: 2 stride: 2 } }
 
+####The settings here are slightly different from those in the paper, but they have little effect on the final result.####
 layer { bottom: 'pool1-data2' top: 'conv22-data2' name: 'conv22-data2' type: "Convolution"  param { lr_mult: 1 decay_mult: 1 } param { lr_mult: 2 decay_mult: 0}
   convolution_param { engine: CAFFE num_output: 60 pad_h: 0    pad_w: 1      kernel_w: 3    kernel_h: 1    } }
 layer { bottom: 'conv22-data2' top: 'conv22-data2' name: 'relu22-data2' type: "ReLU" }
