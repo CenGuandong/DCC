@@ -37,4 +37,4 @@ Installation
 
 4. Add these layers: BatchNorm Layer(not provided in this branch), jaccard_loss_layer.cpp and post_layer.cpp.
 
-5. make all & run deploy_demo/demo_e2e.py.
+5. make all & make pycaffe & run deploy_demo/demo_e2e.py.
