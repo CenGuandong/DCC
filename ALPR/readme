@@ -2,6 +2,6 @@ Inside this folder are the trained models in Section III.E.
 
 The caffemodel files download link: https://pan.baidu.com/s/1ACXV7NMG6sVT5mI_B6u7Vg
 
-To download UFPR-ALPR dataset, Please cite: 
- R. Laroca, E. Severo, L. A. Zanlorensi, L. S. Oliveira, G. R. Gonalves, W. R. Schwartz, and D. Menotti, “A robust real-time automatic license plate recognition based on the YOLO detector,” in International Joint Conference on Neural Networks, 2018.
+To download UFPR-ALPR dataset, Please refer this paper 
+A robust real-time automatic license plate recognition based on the YOLO detector
  And contact the author: Rayson Laroca <raysonlaroca@gmail.com>
