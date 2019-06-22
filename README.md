@@ -1,5 +1,6 @@
 # DCC
-Automatic Spotting Framework for Detonator Coded Characters based on Convolutional Neural Networks
+This is the Caffe implementation of our SVIP(Signal, Image and Video Processing) paper: "Detonator coded character spotting based on convolutional neural networks".
+link: https://link.springer.com/article/10.1007%2Fs11760-019-01525-1
 
 Code written by Guandong Cen(cenguandong@qq.com)
 
